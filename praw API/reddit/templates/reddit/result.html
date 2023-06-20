@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Result  {% endblock %}
+{% block content %}
+<div class="container">
+    <p class="card-text">{{r1}}</p>
+    <p class="card-text">{{r2}}</p>
+    <p class="card-text">{{r3}}</p>
+    <p class="card-text">{{r4}}</p>
+    <p class="card-text">{{r5}}</p>
+<div class="container shadow p-3 mb-2">    
+    <div class="header shadow-lg p-1 rounded bg-primary text-center">
+        <h1 class="display-6 text-white">Reddit API<i class="far fa-newspaper"></i><h1>    
+    </div>
+    <div class="form-group mb-2">
+        <form method="post">
+            {% csrf_token %}
+            <label for="redditSearchWord">Enter Keyword to Search Without Space</label>
+            <input type="text" class="form-control" name="redditSearchWord" placeholder="Enter Subreddit to Search">
+            <button class="shadow-lg btn btn-primary btn-primary btn-lg btn-block mt-4" type="submit">Submit <i class="fab fa-python"></i></button>  
+        </form>
+    </div>
+</div>
+{% endblock content %}

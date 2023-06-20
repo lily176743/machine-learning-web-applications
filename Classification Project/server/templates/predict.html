@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container text-center">    
+    <p>The Predicted flower class is {{result}}</p>
+</div>
+<div class="container-fluid m-2 p-3">
+    <form method="post">
+        {% csrf_token %}
+            <div class="form-group">
+                <label>Sepal length </label>
+                <input class="form-control" type="number" name="slength" placeholder="sepalLength">
+            </div>
+            <div class="form-group">
+                <label>Sepal width </label>
+                <input class="form-control" type="number" name="swidth" placeholder="sepalWidth">
+            </div>
+            <div class="form-group">
+                <label>Petal length </label>
+                <input class="form-control" type="number" name="plength" placeholder="petalLength">
+            </div>
+            <div class="form-group">
+                <label>Petal Width </label>
+                <input class="form-control" type="number" name="pwidth" placeholder="petalWidth">
+            </div>
+            <button type="submit" class="btn btn-dark" style="width:400px">Submit</button>
+    </form>
+</div>
+
+
+{% endblock body %}
